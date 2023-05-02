@@ -1,0 +1,26 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+<div class="container" style="text-align: center;">
+
+        <div>
+            <div style="margin-top: 30px;">
+                <form action="/manageorder/oldest" method="POST">
+                <h4>product name : <%= order.name %></h4>
+                <h4>total price : <%= order.price %></h4>
+                <h4>the amount : <%= order.amount %></h4>
+                <input type="hidden" name="orderid" value="<%= order._id %>" />
+                <select name="status" class="categoryname" value="<%= order.status %>">
+                    <option>pending</option>
+                    <option>sent</option>
+                    <option>completed</option>
+                </select><br /><br />
+                <input type="submit" value="EDIT" class="buttonform1">
+            </form>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+<%- include('./parts/footer.ejs') %>

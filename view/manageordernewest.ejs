@@ -1,0 +1,72 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+<div class="container" style="text-align: center; margin-top: 30px;">
+    <h4 class="filter"><i class="fa fa-outdent" aria-hidden="true"></i> filter</h4>
+    <table class="filtertable" style="margin: auto; width: 300px;">
+        <tr>
+            <td class="leftrow" style="font-weight: bold;">status</td>
+            <td style="font-weight: bold;">Time</td>
+        </tr>
+        <tr>
+            <td class="leftrow">
+                <form action="/manageorder/newest" method="GET">
+                <input type="submit" name="filterstatus" value="all" style="background:none; border: none;">
+                </form>
+            </td>
+            <td><a href="/manageorder/oldest"><button style="background:none; border: none;">oldest</button></a></td>
+        </tr>
+        <tr>
+            <td class="leftrow">
+                <form action="/manageorder/newest" method="GET">
+                <input type="submit" name="filterstatus" value="pending" style="background:none; border: none;">
+                </form>
+            </td>
+            <td><a href="/manageorder/newest"><button style="background:none; border: none;">newest</button></a></td>
+        </tr>
+        <tr>
+            <td class="leftrow">
+                <form action="/manageorder/newest" method="GET">
+                <input type="submit" name="filterstatus" value="sent" style="background:none; border: none;">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td class="leftrow">
+                <form action="/manageorder/newest" method="GET">
+                <input type="submit" name="filterstatus" value="completed" style="background:none; border: none;">
+                </form>
+            </td>
+        </tr>
+    </table>
+<% if(orders.length == 0) { %>
+    <div class="alert">THERE'S NO PRODUCTS IN THE ORDER</div>
+<% } else { %>
+    <table style="border: 1px solid; text-align: center; width: 1100px;">
+        <tr style="border: 1px solid;">
+            <th style="border: 1px solid;">order number</th>
+            <th style="border: 1px solid;">product name</th>
+            <th style="border: 1px solid;">Date</th>
+            <th style="border: 1px solid;">total cost</th>
+            <th style="border: 1px solid;">address</th>
+            <th style="border: 1px solid;">status of order</th>
+            <th style="border: 1px solid;">edit the status of order</th>
+          </tr>
+        <% for(let i=0 ; i<orders.length ; i++) { %>
+            <tr style="border: 1px solid;">
+                <td style="border: 1px solid;"><%= [i+1] %></td>
+                <td style="border: 1px solid;"><a href="/product/<%= orders[i].productid %>"><%= orders[i].name %></a></td>
+                <td style="border: 1px solid;"><%= orders[i].timestamp.toDateString() %></td>
+                <td style="border: 1px solid;"><%= orders[i].amount*orders[i].price %> $</td>
+                <td style="border: 1px solid;"><%= orders[i].address %></td>
+                <td style="border: 1px solid;"><%= orders[i].status %></td>
+                <td class="editorder" style="border: 1px solid;"><a href="/editorder/newest/<%= orders[i]._id %>"><input value="edit status" class="brownbutton editorder2"></a></td>
+            </tr>
+        <% } %>
+    </table>
+</div>
+<% } %>
+</div>
+</div>
+<%- include('./parts/footer.ejs') %>

@@ -1,0 +1,75 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+<div class="container">
+<form action="/products" method="GET" style="text-align: center;">
+    <i class="fa fa-search" style="font-weight: bold; font-size: 20px; position: relative; left: 50px;" aria-hidden="true"></i>
+    <select name="categoryname" class="categoryname">
+        <option value="" disabled selected hidden>Select the category</option>
+        <option>all</option>
+        <option>clothes</option>
+        <option>mobiles</option>
+        <option>electronics</option>
+        <option>furnitures</option>
+        <option>watches</option>
+        <option>shoes</option>
+        <option>perfumes</option>
+        <option>other</option>
+    </select>
+    <input type="submit" value="Search" class="buttonform3" style="border-radius: 10px;" />
+</form>
+<% if(products.length == 0) { %>
+    <div class="alert alert-danger">
+    <h6>
+        THERE'S NO PRODUCTS !
+    </h6>
+    </div>
+<% } else { %>
+    <% if(validationflash2) { %>
+        <h6>
+        <div class="alert alert-danger"><%= validationflash2.msg %></div>
+        </h6>
+    <% } %>
+
+    <div class="row">
+        <% for(let product of products) { %>
+
+        <div class="col-md-4">
+            <div class="card homecard">
+                <img class="card-img-top" src="/upload/images/<%= product.img %>" height="300" />
+                <h3 style="color: black;"><%= product.name%></h3>
+                <h3><%= product.price %> $ </h3>
+                <% if((isuser) && isadmin === false ) { %>
+                <form action="/cart" method="POST">
+                    <input type="number" name="amount" class="form-control" style="display: inline-block; text-align: center;" placeholder="enter the amount" /><br /><br />
+                    <input type="hidden" name="name" value="<%= product.name%>" />
+                    <input type="hidden" name="price" value="<%= product.price %>" />
+                    <input type="hidden" name="productid" value="<%= product._id %>"/>
+                    <input type="hidden" name="image" value="<%= product.img %>" />
+                    <input type="submit" value="add to cart" class="buttonform1" style="display: inline-block;" />
+                    <a href="/product/<%= product._id %>">
+                        <button class="buttonform2" style="display: inline-block;">view</button>
+                    </a>
+                </form>
+                <% } %>
+                <% if((isuser) && isadmin === true ) { %>
+                <form action="/products/delete" method="POST">
+                    <input type="hidden" name="productid" value="<%= product._id %>"/>
+                    <input type="submit" value="Delete" class="buttonform4" />   
+                    <a href="/product/<%= product._id %>">
+                        <button class="buttonform2" style="display: inline-block;">view</button>
+                    </a>          
+                </form>
+                <% } %>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <% } %>
+</div>
+</div>
+</div>
+
+<%- include('./parts/footer.ejs') %>
+                    

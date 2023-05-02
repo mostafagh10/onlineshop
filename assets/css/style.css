@@ -1,0 +1,567 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(206, 206, 206);
+}
+.navbar-brand{
+    font-weight: bold;
+    font-family:cursive;
+    font-style: italic;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: black;
+    text-transform: capitalize;
+    transition: all 0.2s ease-in-out;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    font-weight: 500;
+    color:rgb(138, 62, 112) ;
+}
+.alert{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    text-transform: capitalize;
+    color: rgb(124, 1, 1);
+}
+.homecard{
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    text-transform: capitalize;
+    box-shadow: 7px 7px 20px black;
+}
+.homecard a{
+    font-size: 25px;
+    color: rgb(202, 92, 165);
+}
+.homecard a:hover{
+    color: rgb(138, 62, 112);
+}
+.home4 h5 a {
+    font-size: 20px;
+}
+@media (max-width:767px){
+    .home4 h5 a {
+        font-size: 15px;
+    }
+}
+.homeamount{
+    text-align: center;
+}
+.brownbutton,.rosebutton,.brown2button,.orderbutton{
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+    text-align: center;
+    padding: 7px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.brownbutton{
+    width: 40% !important;
+}
+@media (max-width:767px){
+    .brownbutton{
+        width: 70% !important;
+    }
+    .input-icons i{
+        display: none;
+    }
+}
+.brownbutton,.brown2button{
+    background-color: rgb(53, 12, 12);
+    color: white;
+}
+.brownbutton:hover{
+    background-color: grey;
+    color: rgb(53, 12, 12);
+    cursor: pointer;
+}
+.brown2button{
+    margin-top: 40px;
+}
+.brown2button:hover{
+    background-color: white;
+    color: rgb(53, 12, 12);
+}
+.rosebutton{
+    background-color: gray;
+    color: rgb(112, 27, 101);
+}
+.rosebutton:hover{
+    background-color: rgb(219, 106, 204);
+    color: white;
+}
+.productdetails{
+    margin-top: 50px;
+}
+.productdetailsdescription{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+@media (max-width:767px){
+    .productdetailsdescription{
+        font-size: 20px;
+    }
+}
+.address{
+    text-align: center;
+    height: 50px;
+    font-weight: bold;
+}
+.orderbutton{
+    margin-top: 20px;
+}
+.theorder{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.orderdescription{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 20px;
+}
+@media (max-width:767px){
+    .orderdescription{
+        font-size: 20px;
+    }
+}
+.orderdescription a{
+    border:0;
+    text-decoration:none; 
+    outline:none; 
+    color: rgb(112, 27, 101);
+    transition: all 0.3s ease-in-out;
+}
+.orderdescription a:hover{
+    color: white;
+}
+.accounticon{
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 8%;
+    font-size: 70px;
+}
+.account{
+    margin-top: 100px;
+}
+.accountdescription{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+@media (max-width:767px){
+    .accountdescription{
+        font-size: 20px;
+    }
+}
+.accountemail{
+    text-transform: none;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+.login{
+    margin-top: 30px;
+    box-shadow: 15px 15px 45px black;
+}
+.loginform input,.loginform select,.loginform select option{
+    width: 80%;
+    height: 45px;
+    text-align: center;
+    text-align-last:center;
+    font-weight: bold;
+}
+.welcomep{
+    font-size: 25px;
+}
+@media (max-width:767px){
+    .loginform input{
+        width: 100%;
+    }
+    .welcomep{
+        font-size: 20px;
+    }
+}
+.signup{
+    margin-top: 15px;
+    box-shadow: 15px 15px 45px black;
+}
+.leftrow{
+    text-align: center;
+    width: 150px;
+}
+.editorder2:hover{
+    cursor: pointer;
+}
+.filter:hover{
+    cursor: pointer;
+}
+.filtertable{
+    display: none;
+}
+.categoryname{
+    width: 60%;
+    height: 45px;
+    text-align: center;
+    text-align-last:center;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+@media (max-width:767px){
+    .categoryname{
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}
+.categoryname option{
+    font-weight: bold;
+    text-align: center;
+}
+
+/* input fields */
+.input-icons i { 
+    position: absolute; 
+    margin-top: 14px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.input-icons { 
+    width: 100%; 
+    margin-bottom: 20px; 
+} 
+.input-field { 
+    width: 100%; 
+    padding: 10px; 
+    text-align: center; 
+} 
+
+/* transition animation */
+.transition-fade{
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+    transform-origin: left;
+}
+html.is-animating .transition-fade{
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade{
+    opacity: 0;
+}
+
+/*   after updating    */
+
+.icon-button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    outline: none;
+    background: none;
+    border: none;
+    margin-right: 15px;
+}
+.iconbuttonbadge{
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/*   home part 1   */
+.home1{
+    height: 640px;
+    width: 100%;
+    background-image: url('../upload/images/backgroundhomepage.jpg');
+    background-size: cover;
+}
+.home1text{
+    padding-top: 20%;
+    width: 40%;
+    color: white;
+    text-transform: capitalize;
+}
+.home1text h3{
+    font-size: 40px;
+}
+.home1text h7{
+    font-size: 20px;
+    color: rgb(184, 46, 165);
+}
+.home1text h12{
+    font-size: 15px;
+}
+.home1text button{
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 140px;
+    height: 40px;
+    text-transform: capitalize;
+}
+
+@media (max-width:768px){
+    .home1{
+        height: 480px;
+        background-size: auto ;
+    }
+    .home1text{
+        text-align: center;
+        width: 80%;
+        margin: 5px auto;
+    }
+}
+/*    home  part 2   */
+.home2{
+    background-color: white;
+    text-transform: capitalize;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.home2title{
+    background-color: rgb(255, 228, 228);
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.home2text{
+    padding-top: 50px;
+}
+.home2text h3{
+    color: rgb(184, 46, 165);
+}
+
+@media (max-width:768px){
+   .home2text{
+    text-align: center;
+   }
+}
+
+/*   home part 3    */
+.home3text .card{
+    background-color: white;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.home3left{
+    float: left;
+    font-size: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.home3right{
+    margin-top: 15px;
+}
+.home3right h5{
+    font-size: 20px;
+}
+.home3right p{
+    font-size: 10px;
+}
+.home3text .card:hover{
+    background-color: black;
+    color: white;
+}
+
+@media (max-width:768px){
+    .home3text{
+     padding: 20px;
+     margin: 0px 50px 0px 50px;
+    }
+ }
+
+ /*  home part 4    */
+ .home4{
+    background-color: white;
+    text-transform: capitalize;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    text-align: center;
+ }
+ .home4 h5{
+    margin: 30px 0px 10px 0px;
+    cursor: pointer;
+ }
+ .home4 h5 a{
+    font-weight: bold;
+    color:rgb(184, 46, 165);
+    text-decoration: none;
+ }
+
+ /* footer   */
+.footer{
+    color: white;
+    background-color: black;
+    text-transform: capitalize;
+    padding-top: 30px;
+  }
+  .footerpart{
+    margin-top: 15px;
+  }
+  .footerpart h11{
+    margin-top: 6px;
+    display: block;
+    color:rgba(207, 202, 202, 0.61) ;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .footerpart h11:hover{
+    color: white;
+  }
+  .footerpart2 i{
+    font-size: 20px;
+    margin-right: 35px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  .footerpart2 i:hover{
+    color:rgb(184, 46, 165);
+  }
+  @media screen and (max-width: 500px) {
+    .footer h3{
+      font-size: 20px;
+    }
+    .footerpart img{
+      width: 80%;
+    }
+  }
+
+ /*   buttons    */
+.buttonform1,.buttonform2,.buttonform3,.buttonform4{
+    height: 40px;
+    width: 110px;
+    padding: 5px;
+    font-size: 15px;
+    text-transform: capitalize;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+.buttonform1{
+    background-color: rgb(0, 95, 133);
+    color: white;
+}
+.buttonform1:hover{
+    color: rgb(0, 95, 133);
+    background-color: white;
+}
+
+.buttonform2{
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+.buttonform2:hover{
+    color: rgb(39, 39, 39);
+    background-color: white;
+}
+
+.buttonform3{
+    background-color: rgb(82, 0, 54);
+    color: white;
+}
+.buttonform3:hover{
+    color: rgb(82, 0, 54);
+    background-color: white;
+}
+
+.buttonform4{
+    background-color: rgb(117, 1, 27);
+    color: white;
+}
+.buttonform4:hover{
+    color: rgb(117, 1, 27);
+    background-color: white;
+}
+
+/*   table styling   */
+table{
+    margin: 20px auto;
+}
+table td,table th{
+    padding : 12px 15px;
+    border : 1px solid black;
+    text-align: center;
+    font-size: 16px;
+}
+table th{
+    background-color: rgb(58, 18, 122);
+    color: white;
+}
+
+@media(max-width:500px){
+    table thead{
+        display: none;
+    }
+    table tbody tr:nth-child(even){
+        background-color: rgb(58, 18, 122);
+        color: white;
+    }
+    table , table tbody , table tr , table td{
+        display: block;
+        width: 100%;
+    }
+    table tr{
+        margin-bottom: 15px;
+    }
+    table td{
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+        padding-bottom: 50px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}

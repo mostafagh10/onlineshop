@@ -1,0 +1,72 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+<div class="container" style="text-align: center; margin-top: 30px;">
+    <!-- modal -->
+    <button style="margin-bottom: 20px; border-radius: 15px;" type="button" class="buttonform3" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-outdent" aria-hidden="true"></i> &nbsp; filter</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">filter the orders</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="/manageorder/oldest" method="get">
+            <div class="modal-body">
+                    <select name="filterstatus" class="categoryname">
+                        <option value="" disabled selected hidden>Select the status</option>
+                        <option>all</option>
+                        <option>pending</option>
+                        <option>sent</option>
+                        <option>completed</option>
+                    </select>  
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <input type="submit" class="btn btn-primary" value="filter" />
+            </div>
+        </form>
+          </div>
+        </div>
+      </div>
+      <!-- end of modal -->
+
+<% if(orders.length == 0) { %>
+    <div class="alert">THERE'S NO PRODUCTS IN THE ORDER</div>
+<% } else { %>
+    <table>
+        <thead>
+            <th>order number</th>
+            <th>product name</th>
+            <th>updating Date</th>
+            <th>total cost</th>
+            <th>address</th>
+            <th>status of order</th>
+            <th>action</th>
+          </thead>
+          <tbody>
+        <% for(let i=orders.length-1 ; i>=0 ; i--) { %>
+            <tr>
+                <td data-label="order number"><%= [i+1] %></td>
+                <td data-label="product name"><%= orders[i].name %></td>
+                <td data-label="updating date"><%= orders[i].timestamp.toDateString() %></td>
+                <td data-label="total price"><%= orders[i].amount*orders[i].price %> $</td>
+                <td data-label="address"><%= orders[i].address %></td>
+                <td data-label="status of order"><%= orders[i].status %></td>
+                <td data-label="action">
+                    <a href="/editorder/oldest/<%= orders[i]._id %>"><input value="edit status" class="buttonform1 editorder2"></a>
+                    <a href="/product/<%= orders[i].productid %>"><button class="buttonform2">view product</button></a>
+                </td>
+
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<% } %>
+</div>
+</div>
+<%- include('./parts/footer.ejs') %>

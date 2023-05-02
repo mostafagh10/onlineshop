@@ -1,0 +1,186 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+    <!-- part 1 -->
+    <div class="home1">
+      <div class="container">
+        <div class="home1text">
+        <h3>online shop</h3>
+        <h7>will get the newest products</h7><br />
+        <h12>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</h12><br />
+        <button class="btn btn-dark">shop now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- part 2 -->
+    <div class="home2">
+        <div class="container">
+            <div class="home2title">
+                <h3><span style="color:rgb(184, 46, 165)">about</span> us</h3>
+            </div>
+            <div class="row">
+                <div class="d-none d-md-block col-md-6">
+                    <img src="/upload/images/white-background-photo.jpg" width="100%" height="350" />
+                </div>
+                <div class="col-md-6 col-sm-12 home2text">
+                    <h3>who is onlineShop ?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p><br />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- part 3 -->
+    <div class="home3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 home3text">
+                    <div class="card">
+                    <div class="home3left">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                    </div>
+                    <div class="home3right">
+                        <h5>free shopping</h5>
+                        <p>lorem ispum dolor sit amet</p>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-md-3 home3text">
+                    <div class="card">
+                    <div class="home3left">
+                        <i class="fa fa-money" aria-hidden="true"></i>
+                    </div>
+                    <div class="home3right">
+                        <h5>10 days return</h5>
+                        <p>lorem ispum dolor sit amet</p>
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="col-md-3 home3text">
+                    <div class="card">
+                    <div class="home3left">
+                        <i class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                    <div class="home3right">
+                        <h5>offer & gift</h5>
+                        <p>lorem ispum dolor sit amet</p>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 home3text">
+                    <div class="card">
+                    <div class="home3left">
+                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                    </div>
+                    <div class="home3right">
+                        <h5>secure payment</h5>
+                        <p>lorem ispum dolor sit amet</p>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <% if(products.length >= 6){ %>
+    <!-- home part 4 -->
+    <div class="home4">
+        <div class="container">
+            <div class="home2title">
+                <h3>latest <span style="color:rgb(184, 46, 165)">products</span></h3>
+            </div>
+
+            <% if(products.length >= 6){ %>
+            <div class="row">
+                <% for(var i=products.length-1 ; i>products.length-7 ; i--) { %>
+        
+                <div class="col-md-4">
+                    <div class="card homecard">
+                        <img class="card-img-top" src="/upload/images/<%= products[i].img %>" height="300" />
+                        <h3 style="color: black;"><%= products[i].name%></h3>
+                        <h3><%= products[i].price %> $ </h3>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <% } else { %>
+                <% for(var i=products.length-1 ; i>0 ; i--) { %>
+        
+                    <div class="col-md-4">
+                        <div class="card homecard">
+                            <img class="card-img-top" src="/upload/images/<%= products[i].img %>" height="300" />
+                            <h3 style="color: black;"><%= products[i].name%></h3>
+                            <h3><%= products[i].price %> $ </h3>
+                        </div>
+                    </div>
+                    <% } %>
+            <% } %>
+            <h5><a href="/products">click here to view more products <i class="fa fa-arrow-right" aria-hidden="true"></i></a></h5>
+        </div>
+    </div>
+    <% } %>
+
+     <!-- footer part -->
+     <div class="footer">
+        <div class="container">
+          <h3>special offer all branded sandals are <br /> flat 50% discount</h3>
+          <div class="row">
+            <div class="footerpart col-md-3">
+              <h5>useful links</h5>
+              <h11>home</h11>
+              <h11>about</h11>
+              <h11>blogs</h11>
+              <h11>content</h11>
+              <h11>support</h11>
+              <h11>news & media</h11>
+              <h11>carrers</h11>
+            </div>
+            <div class="footerpart col-md-3">
+              <h5>information</h5>
+              <h11>terms & conditions</h11>
+              <h11>delivery terms</h11>
+              <h11>order tracking</h11>
+              <h11>returns policy</h11>
+              <h11>privacy policy</h11>
+              <h11>faq</h11>
+              <h11>the shop</h11>
+            </div>
+            <div class="footerpart col-md-3">
+              <h5>address</h5>
+              <h11>london , uk</h11>
+              <h11>998 thj street,office 345</h11>
+              <h11>harlo 64466</h11>
+              <h11>(+21) 548 365 2487</h11>
+              <h11>shoppykart@gmail.com</h11>
+            </div>
+            <div class="footerpart col-md-3">
+              <h5>payment method</h5>
+             <img style="margin-top: 10px;" src="/upload/images/paymentmethods.jpg" height="100" width="100%" />
+            </div>
+          </div>
+          <div class="row" style="margin-top: 20px;">
+            <div class="col-md-9">
+              <p>2021 shoppykart . all rights reserved | designed by <span>w3layout</span></p>
+            </div>
+            <div class="footerpart2 col-md-3">
+              <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+              <i class="fa fa-facebook-square" aria-hidden="true"></i>
+              <i class="fa fa-twitter-square" aria-hidden="true"></i>
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>       
+
+</div>
+</div>
+
+<%- include('./parts/footer.ejs') %>
+                    

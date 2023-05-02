@@ -1,0 +1,23 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+<div class="container" style="text-align: center;">
+
+        <div class="row account">
+            <div class="col-md-6">
+                <div class="accounticon">
+                <p><%= useritems.user.username[0] %><%= useritems.user.lastname[0] %></p>
+                </div>
+                </div>
+                <div class="col-md-6 accountdescription">
+                <p>name : <%= useritems.user.username %> <%= useritems.user.lastname %></p>
+                <p class="accountemail">Email : <%= useritems.user.email %></p>
+                <p>number of items in cart : <%= useritems.items.length %></p>
+                <p>number of items in order : <%= useritems.orders.length %></p>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+<%- include('./parts/footer.ejs') %>

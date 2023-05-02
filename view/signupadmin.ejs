@@ -1,0 +1,62 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+<div class="container signup" style="padding: 0px; margin-bottom: 10px;">
+    <% if(signupflash) { %>
+        <p class="alert alert-danger"><%= signupflash %></p>
+    <% } %>
+<div class="row no-gutters">
+<div class="col-lg-6 col-sm-12" style="background-color: white; padding: 20px; text-align: center;">
+<p style="font-weight: bold; font-size: 30px; color: rgb(177, 78, 132);"><i>register an admin</i></p>
+<form action="/signupadmin" method="POST" class="loginform">
+    <div class="input-icons"> 
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        <input class="input-field" type="text" name="username" placeholder="enter your firstname"> 
+        <% let usernameerror = validationflash.find(err => err.param === 'username') %>
+        <% if(usernameerror) { %>
+        <p style="color: red; font-weight: bold;"><%= usernameerror.msg %></p>
+        <% } %>
+    </div>
+    <div class="input-icons"> 
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        <input class="input-field" type="text" name="lastname" placeholder="enter your lastname"> 
+        <% let lastnameerror = validationflash.find(err => err.param === 'lastname') %>
+        <% if(lastnameerror) { %>
+            <p style="color: red; font-weight: bold;"><%= lastnameerror.msg %></p>
+        <% } %>
+    </div>
+    <div class="input-icons"> 
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <input class="input-field" type="email" name="email" placeholder="enter the email"> 
+        <% let emailerror = validationflash.find(err => err.param === 'email') %>
+        <% if(emailerror) { %>
+            <p style="color: red; font-weight: bold;"><%= emailerror.msg %></p>
+        <% } %>
+    </div>
+    <div class="input-icons"> 
+        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+        <input class="input-field" type="password" name="password" placeholder="enter the password"> 
+        <% let passworderror = validationflash.find(err => err.param === 'password') %>
+        <% if(passworderror) { %>
+            <p style="color: red; font-weight: bold;"><%= passworderror.msg %></p>
+        <% } %>
+    </div>
+    <div class="input-icons"> 
+        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+        <input class="input-field" type="password" name="confirmpassword" placeholder="confirm your password"> 
+        <% let confirmerror = validationflash.find(err => err.param === 'confirmpassword') %>
+        <% if(confirmerror) { %>
+            <p style="color: red; font-weight: bold;"><%= confirmerror.msg %></p>
+        <% } %>
+    </div>
+    <input type="submit" value="register" style="width: 35%;" class="brownbutton" />
+</form>
+</div>
+<div class="d-none d-sm-none d-md-none d-lg-block col-lg-6">
+    <img src="/upload/images/46b758397f582fd148bc81c8847ccde0.jpg" width="100%" height="100%" />
+</div>
+</div>
+</div>
+</div>
+<%- include('./parts/footer.ejs') %>

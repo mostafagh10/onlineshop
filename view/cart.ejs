@@ -1,0 +1,35 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+<% if(items.length == 0) { %>
+    <div class="alert">THERE'S NO PRODUCTS IN THE CART</div>
+<% } else { %>
+<div class="container" style="text-align: center;">
+    <form method="POST" style="margin-top: 10px;">
+    <input type="submit" value="clear the cart" class="buttonform3" formaction="/cart/deleteall" />
+    </form>
+    <div class="row">
+        <% for(let i=0 ; i<items.length ; i++) { %>
+
+        <div class="col-md-4" style="margin-top: 10px;">
+            <div class="card homecard">
+               <img class="card-img-top" src="/upload/images/<%= items[i].img %>" height="300" />
+               <form method="POST">
+                <h4><%= items[i].name %></h4>
+                <h4>price : <%= items[i].price %> $</h4>
+                <h4>amount : <%= items[i].amount %></h4>
+                <h4>total : <%= items[i].amount * items[i].price %> $</h4>
+                <input type="hidden" name="itemid" value="<%= items[i]._id %>" />
+                <input type="submit" value="DELETE" class="buttonform4" formaction="/cart/delete" />
+                <a href="/cart/<%= items[i]._id %>"><input value="ORDER" class="buttonform1" /></a>
+               </form>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</div>
+<% } %>
+</div>
+</div>
+<%- include('./parts/footer.ejs') %>

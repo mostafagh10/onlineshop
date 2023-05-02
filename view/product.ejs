@@ -1,0 +1,24 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+<div class="container" style="text-align: center;">
+    <% if(!product) { %>
+        <p class="alert alert-danger">this product removed from the list</p>
+    <% } else { %>
+        <div class="row productdetails">
+            <div class="col-md-6">
+                <img class="card-img-top" src="/upload/images/<%= product.img %>" height="500px" />
+            </div>
+            <div class="col-md-6 productdetailsdescription">
+                <p>name of product : <%= product.name %></p>
+                <p>price of product : <%= product.price %> $ </p>
+                <p>the description : <%= product.description %></p>
+                <p>the category : <%= product.category %></p>
+            </div>
+        </div>
+    <% } %>
+</div>
+</div>
+</div>
+<%- include('./parts/footer.ejs') %>

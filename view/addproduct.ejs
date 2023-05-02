@@ -1,0 +1,52 @@
+<%- include('./parts/header.ejs') %>
+<%- include('./parts/body2.ejs') %>
+<div id="barba-wrapper">
+<div class="barba-container">
+<div class="container signup" style="padding: 0px; margin-bottom: 10px;">
+<div class="row no-gutters">
+    <div class="d-none d-sm-none d-md-none d-lg-block col-lg-6">
+        <img src="/upload/images/online-store-3153783_960_720.jpg" width="100%" height="100%" />
+    </div>
+    <div class="col-lg-6 col-sm-12" style="background-color: white; padding: 20px; text-align: center;">
+        <p style="font-weight: bold; font-size: 30px; color: rgb(177, 78, 132);"><i>Add Product</i></p>
+<form action="/addproduct" method="POST" enctype="multipart/form-data" class="loginform">
+    <input type="text" name="name" placeholder="enter the name of product" /><br /><br />
+    <% let nameerror = validationflash4.find(err => err.param === 'name') %>
+    <% if(nameerror) { %>
+        <p style="color: red; font-weight: bold;"><%= nameerror.msg %></p>
+    <% } %>
+    <input type="number" name="price" placeholder="enter the price" /><br /><br />
+    <% let priceerror = validationflash4.find(err => err.param === 'price') %>
+    <% if(priceerror) { %>
+        <p style="color: red; font-weight: bold;"><%= priceerror.msg %></p>
+    <% } %>
+    <input type="text" name="description" placeholder="enter the description" /><br /><br />
+    <% let descriptionerror = validationflash4.find(err => err.param === 'description') %>
+    <% if(descriptionerror) { %>
+        <p style="color: red; font-weight: bold;"><%= descriptionerror.msg %></p>
+    <% } %>
+    <select name="category">
+        <option value="" disabled selected hidden>Select the category</option>
+        <option>clothes</option>
+        <option>mobiles</option>
+        <option>electronics</option>
+        <option>furnitures</option>
+        <option>watches</option>
+        <option>shoes</option>
+        <option>perfumes</option>
+        <option>other</option>
+    </select><br /><br />
+    <% let categoryerror = validationflash4.find(err => err.param === 'category') %>
+    <% if(categoryerror) { %>
+        <p style="color: red; font-weight: bold;"><%= categoryerror.msg %></p>
+    <% } %>
+    <label><b>upload image</b></label><br />
+    <input type="file" name="image" style="width: 50%;" /><br /><br />
+    <input type="submit" value="add the product" class="brownbutton" />
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<%- include('./parts/footer.ejs') %>

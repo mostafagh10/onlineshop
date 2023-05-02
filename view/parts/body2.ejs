@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+    <a class="navbar-brand" href="/">online<span style="color: rgb(184, 46, 165);">Shop</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav mx-auto">
+        <% if(isuser) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/products">products</a>
+        </li>
+        <% } %>
+        <% if((isuser) && isadmin === false ) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/cart">my cart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/order">my orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/account">my account</a>
+          </li>
+          <% } %>
+          <% if((isuser) && isadmin === true ) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/addproduct">add product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/manageorder/oldest">manage orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signupadmin">register admin</a>
+          </li>
+          <% } %>
+      </ul>
+
+    <% if((isuser) && isadmin === false ) { %>
+    <button type="button" class="icon-button">
+     <a href="/cart" style="color: black; font-size: 30px;">
+        <span class="icon"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></span>
+     </a>
+     <span class="iconbuttonbadge"><%= useritems.items.length %></span>
+    </button>
+    <% }  %>
+      <% if(!isuser) { %>
+      <form>
+        <a href="/login"><button class="btn btn-secondary" style="text-transform: capitalize;">log in</button></a>
+        <a href="/signup"><button class="btn btn-primary" style="text-transform: capitalize;">sign up</button></a>
+      </form>
+      <% } %>
+      <% if(isuser) { %>
+        <form action='/logout' method='post'>
+        <input style="text-transform: capitalize;" type="submit" value="log out" class="btn btn-danger">
+        </form>
+        <% } %>
+    </div>
+</div>
+  </nav>

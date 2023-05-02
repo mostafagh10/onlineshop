@@ -1,0 +1,20 @@
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/0.0.2/barba.min.js"></script>
+<script src="/js/script.js"></script>
+<script type="text/javascript">
+$('document').ready(function(){
+    $('.filter').click(function(){
+        $('.filtertable').fadeToggle(400);
+    })
+})
+    function togglemenu(){
+        let navigation = document.querySelector('.navigation');
+        let toggle = document.querySelector('.toggle');
+        navigation.classList.toggle('active');
+        toggle.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
